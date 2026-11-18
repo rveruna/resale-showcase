@@ -1,0 +1,27 @@
+{
+  "name": "@resale/db",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Drizzle schema and migrations for D1.",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@resale/domain": "workspace:*",
+    "drizzle-orm": "^0.45.4"
+  },
+  "devDependencies": {
+    "@resale/config": "workspace:*",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.0.0",
+    "better-sqlite3": "^13.0.3",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9.39.5",
+    "typescript": "~6.0.3"
+  }
+}

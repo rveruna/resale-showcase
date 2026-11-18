@@ -1,0 +1,37 @@
+{
+  "name": "@resale/config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared ESLint, TypeScript and Jest config.",
+  "exports": {
+    "./eslint": "./eslint.base.js",
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./eslint-react-native": "./eslint.react-native.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-native": "^5.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.39.4",
+    "typescript": "~6.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "30.0.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "~19.3.0",
+    "eslint": "^9.39.4",
+    "jest": "~30.5.2",
+    "typescript": "~6.0.3"
+  }
+}

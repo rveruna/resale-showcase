@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+dist/
+storybook-static/
+.turbo/
+.wrangler/
+.expo/
+pnpm-lock.yaml
+packages/db/migrations/

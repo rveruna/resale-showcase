@@ -1,0 +1,11 @@
+packages:
+  - apps/*
+  - packages/*
+
+# These ship prebuilt binaries as optional dependencies; their install scripts are
+# only a fallback, so they stay blocked.
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  unrs-resolver: false
+  workerd: false

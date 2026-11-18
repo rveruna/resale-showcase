@@ -1,0 +1,41 @@
+{
+  "name": "@resale/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hono backend on Cloudflare Workers, run locally with Wrangler.",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm db:ready && wrangler dev --port 8787",
+    "db:ready": "test -d .wrangler/state/v3/d1 || pnpm db:reset",
+    "db:reset": "rm -rf .wrangler/state && wrangler d1 migrations apply resale --local && tsx scripts/seed.mts > .wrangler/seed.sql && wrangler d1 execute resale --local --file .wrangler/seed.sql",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "types": "tsc -p tsconfig.types.json"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.9.1",
+    "@resale/db": "workspace:*",
+    "@resale/domain": "workspace:*",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.13.14",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261028.1",
+    "@resale/config": "workspace:*",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.0.0",
+    "better-sqlite3": "^13.0.3",
+    "eslint": "^9.39.5",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.154.0"
+  },
+  "exports": {
+    "./types": {
+      "types": "./dist/types/app.d.ts"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@resale/domain",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Business rules as plain TypeScript: no I/O, no framework.",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@resale/config": "workspace:*",
+    "@types/jest": "30.0.0",
+    "eslint": "^9.39.4",
+    "jest": "~30.5.2",
+    "ts-jest": "^29.4.0",
+    "typescript": "~6.0.3"
+  }
+}

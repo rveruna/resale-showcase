@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "resale-api",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-29",
+  "observability": { "enabled": true },
+  "vars": {
+    // The Expo web build in development.
+    "ADMIN_ORIGINS": "http://localhost:8081",
+    // Milliseconds added to every response, to watch loading states and optimistic
+    // updates in the app (README, Things to try). 0 in normal use.
+    "SLOW_MS": "0",
+  },
+  // Local only: `wrangler dev` runs this on Miniflare's SQLite, no Cloudflare account needed.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "resale",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "../../packages/db/migrations",
+    },
+  ],
+}

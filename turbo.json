@@ -1,0 +1,27 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "types": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/packages/domain/src/**",
+        "$TURBO_ROOT$/packages/db/src/**"
+      ],
+      "outputs": ["dist/types/**"]
+    },
+    "lint": {
+      "dependsOn": ["^types"]
+    },
+    "typecheck": {
+      "dependsOn": ["^types"]
+    },
+    "test": {
+      "dependsOn": ["^types"]
+    },
+    "dev": {
+      "dependsOn": ["^types"],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
