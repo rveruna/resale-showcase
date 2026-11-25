@@ -2,8 +2,14 @@
 
 A working slice of a production system I build and run for my second-hand clothing
 business: one central inventory that feeds my own web shop and the marketplaces I sell
-on. The real repository is private. This one keeps its architecture, tooling and coding
-style, with demo data and the inventory and item editing parts only.
+on. It runs in production: the web shop at [prelovedsilk.co.uk](https://prelovedsilk.co.uk)
+sells from this inventory. The real repository is private. This one keeps its
+architecture, tooling and coding style, with demo data and the inventory and item editing
+parts only.
+
+| Inventory: filters, labels and a bulk action on ticked items                                      | Item screen: a save refused because the item changed elsewhere                                                       |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| ![Inventory list with three items ticked and the bulk action bar](docs/screenshots/inventory.png) | ![Item screen showing "Not saved. This item changed since you opened it" with Reload](docs/screenshots/conflict.png) |
 
 **Stack:** TypeScript monorepo (pnpm + Turborepo) · Expo / React Native (iOS, Android, web)
 · Expo Router · **TanStack Query + TanStack DB** · Hono on Cloudflare Workers · D1 (SQLite)
