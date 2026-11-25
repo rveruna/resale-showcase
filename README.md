@@ -13,8 +13,7 @@ parts only.
 
 **Stack:** TypeScript monorepo (pnpm + Turborepo) · Expo / React Native (iOS, Android, web)
 · Expo Router · **TanStack Query + TanStack DB** · Hono on Cloudflare Workers · D1 (SQLite)
-
-- Drizzle · Zod · Jest, Testing Library, Vitest · Storybook
+· Drizzle · Zod · Jest, Testing Library, Vitest · Storybook
 
 ## Run it
 
